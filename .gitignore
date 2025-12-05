@@ -1,0 +1,6 @@
+node_modules/
+blockchain/cache/
+blockchain/artifacts/
+.env
+.dist/
+.DS_Store

@@ -1,0 +1,40 @@
+{
+  "name": "aegis-blockchain",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Aegis: The Blockchain Immune System - Hardhat + TypeScript + Intuition Protocol logic layer",
+  "engines": {
+    "node": ">=18 <21"
+  },
+  "packageManager": "npm@10.5.0",
+  "scripts": {
+    "build": "hardhat compile",
+    "compile": "hardhat compile",
+    "deploy": "hardhat run scripts/deploy.ts --network intuitionTestnet",
+    "antibody": "ts-node scripts/antibody-agent.ts",
+    "graph:triples": "ts-node scripts/query-graph.ts",
+    "link:threat": "hardhat run scripts/link-threat.ts",
+    "check:immunity": "hardhat run scripts/check-immunity.ts",
+    "check:balance": "hardhat run scripts/check-balance.ts --network intuitionTestnet",
+    "block": "hardhat run scripts/block-address.ts --network intuitionTestnet",
+    "quick:block": "hardhat run scripts/quick-block.ts --network intuitionTestnet",
+    "block:auto": "hardhat run scripts/block-address.ts --network intuitionTestnet -- --stake auto",
+    "test": "hardhat test"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@types/node": "^20.11.0",
+    "hardhat": "^2.22.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@0xintuition/protocol": "latest",
+    "@0xintuition/sdk": "latest",
+    "@openzeppelin/contracts": "^5.4.0",
+    "cross-fetch": "^4.1.0",
+    "dotenv": "^16.3.1",
+    "graphql-request": "^6.1.0",
+    "viem": "^2.0.0"
+  }
+}

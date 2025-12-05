@@ -1,0 +1,50 @@
+{
+  "name": "@aegis/sdk",
+  "version": "0.1.0",
+  "description": "TypeScript SDK for Aegis - The Blockchain Immune System",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "prepublishOnly": "npm run build",
+    "test": "echo \"Tests coming soon\" && exit 0"
+  },
+  "keywords": [
+    "aegis",
+    "blockchain",
+    "security",
+    "web3",
+    "intuition",
+    "threat-detection",
+    "defi",
+    "ethereum"
+  ],
+  "author": "Aegis Team",
+  "license": "MIT",
+  "peerDependencies": {
+    "viem": "^2.0.0"
+  },
+  "dependencies": {
+    "@0xintuition/protocol": "latest",
+    "@0xintuition/sdk": "latest",
+    "graphql-request": "^6.1.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.3.3",
+    "@types/node": "^20.11.0"
+  }
+}

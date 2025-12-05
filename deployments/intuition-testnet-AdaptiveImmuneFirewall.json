@@ -1,0 +1,10 @@
+{
+  "contract": "AdaptiveImmuneFirewall",
+  "address": "0x760dA5196e4FAD85C3e41f56a7f019FE867863D7",
+  "chainId": 13579,
+  "network": "intuition-testnet",
+  "vaultAddress": "0x2Ece8D4dEdcB9918A398528f3fa4688b1d2CAB91",
+  "warnStakeTrust": "0.0001",
+  "blockStakeTrust": "0.001",
+  "timestamp": "2025-11-21T23:17:14.620Z"
+}
