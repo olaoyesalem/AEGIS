@@ -25,6 +25,7 @@ export class RiskScorer {
       args: [target],
     });
 
+    
     const [assets, shares, statusNum, tripleId] = result;
 
     // Get counter-conviction if there's a registered triple

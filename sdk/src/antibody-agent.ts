@@ -52,6 +52,7 @@ export class AntibodyAgent {
     return BigInt(newIdHex);
   }
 
+  
   async createThreatTriple(options: CreateThreatTripleOptions): Promise<CreateThreatTripleResult> {
     const { targetAddress, threatLabel = THREAT_LABELS.MALICIOUS, stakeAmount } = options;
 

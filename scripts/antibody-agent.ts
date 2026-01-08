@@ -199,10 +199,17 @@ async function main() {
     };
 
     try {
-        // Desired stake to influence firewall classification.
-        // BLOCK_STAKE_THRESHOLD in AdaptiveImmuneFirewall is 0.001 TRUST (wei style), so stake >= 0.001 helps reach BLOCKED directly (assuming no counter-conviction).
-        const stakeAmount = parseEther("0.0012"); // Slightly above BLOCK threshold for certainty
-        const totalRequired = stakeAmount + tripleCost; // Must cover protocol triple creation fee + stake
+    // Desired stake to influence firewall classification.
+    // NOTE: AdaptiveImmuneFirewall BLOCK_STAKE_THRESHOLD is 0.001 TRUST (0.001 ETH in our test setup).
+    // Use a stake at-or-above that threshold to push a suspect to BLOCKED.
+    // Increase the stake to slightly above the BLOCK threshold and add a small buffer.
+    const stakeAmount = parseEther("0.0012"); // 0.0012 ETH (slightly above 0.001)
+
+    // Add a tiny buffer to avoid precise-fee reverts from on-chain checks (in wei).
+    const feeBuffer = 1000000000000n; // 1e12 wei = 0.000001 ETH
+
+    // Ensure bigint arithmetic: tripleCost is returned as bigint from the RPC.
+    const totalRequired = stakeAmount + BigInt(tripleCost) + feeBuffer; // stake + triple protocol fee + buffer
 
         // Pre-flight balance check (gas not included; user should have small buffer)
         if (balance < totalRequired) {

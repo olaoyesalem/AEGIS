@@ -19,6 +19,7 @@
     "block": "hardhat run scripts/block-address.ts --network intuitionTestnet",
     "quick:block": "hardhat run scripts/quick-block.ts --network intuitionTestnet",
     "block:auto": "hardhat run scripts/block-address.ts --network intuitionTestnet -- --stake auto",
+    "monitor": "ts-node scripts/monitor-firewall.ts",
     "test": "hardhat test"
   },
   "devDependencies": {
